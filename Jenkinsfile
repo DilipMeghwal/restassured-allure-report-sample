@@ -19,8 +19,7 @@ pipeline {
 //     }
     stage('Test') {
         steps {
-            sh 'mvn clean test'
-            sh 'mvn allure:report'
+            bat 'mvn clean test allure:report'
         }
     }
     stage('reports') {
