@@ -19,7 +19,14 @@ pipeline {
 //     }
     stage('Test') {
         steps {
-            bat 'mvn clean test allure:report'
+            if (isUnix()) {
+               sh 'mvn clean test'
+               sh 'mvn allure:report'
+             }
+             else {
+                bat 'mvn clean test'
+                bat 'mvn allure:report'
+             }
         }
     }
     stage('reports') {
