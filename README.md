@@ -1,0 +1,1 @@
+# restassured-allure-report-sample
