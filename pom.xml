@@ -112,6 +112,7 @@
                 <artifactId>allure-maven</artifactId>
                 <version>${allure.maven.version}</version>
                 <configuration>
+                    <installDirectory>${project.build.directory}</installDirectory>
                     <reportVersion>2.9.0</reportVersion>
                 </configuration>
             </plugin>
