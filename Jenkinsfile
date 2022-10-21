@@ -17,7 +17,7 @@ pipeline {
 //           }
 //        }
 //     }
-    stage('Test on unix') {
+    stage('Test') {
         when {
             expression {
                 isUnix()==true
@@ -27,18 +27,27 @@ pipeline {
            sh 'mvn clean test'
            sh 'mvn allure:report'
         }
-    }
-    stage('Test on window') {
-            when {
-                expression {
-                    isUnix()==false
-                }
-            }
-            steps {
-                bat 'mvn clean test'
-                bat 'mvn allure:report'
+        when {
+            expression {
+                isUnix()==false
             }
         }
+        steps {
+            bat 'mvn clean test'
+            bat 'mvn allure:report'
+        }
+    }
+//     stage('Test on window') {
+//             when {
+//                 expression {
+//                     isUnix()==false
+//                 }
+//             }
+//             steps {
+//                 bat 'mvn clean test'
+//                 bat 'mvn allure:report'
+//             }
+//     }
     stage('reports') {
         steps {
             script {
