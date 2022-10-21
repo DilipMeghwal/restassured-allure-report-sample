@@ -17,18 +17,22 @@ pipeline {
 //           }
 //        }
 //     }
-    stage('Test') {
+    stage('Test on unix') {
         when {
-            isUnix() true
+            expression {
+                isUnix()==true
+            }
         }
         steps {
            sh 'mvn clean test'
            sh 'mvn allure:report'
         }
     }
-    stage('Test') {
+    stage('Test on window') {
             when {
-                isUnix() false
+                expression {
+                    isUnix()==false
+                }
             }
             steps {
                 bat 'mvn clean test'
