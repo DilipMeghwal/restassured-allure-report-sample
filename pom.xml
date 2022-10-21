@@ -13,7 +13,7 @@
         <rest-assured.version>4.4.0</rest-assured.version>
         <allure.junit4.version>2.14.0</allure.junit4.version>
         <allure.rest-assured.version>2.14.0</allure.rest-assured.version>
-        <jackson.version>2.12.3</jackson.version>
+        <jackson.version>2.13.4.1</jackson.version>
         <json.version>20210307</json.version>
         <maven.compiler.plugin.version>3.10.1</maven.compiler.plugin.version>
         <maven.compiler.source>11</maven.compiler.source>
