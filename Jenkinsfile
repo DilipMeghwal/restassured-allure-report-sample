@@ -18,17 +18,23 @@ pipeline {
 //        }
 //     }
     stage('Test') {
+        when {
+            isUnix() true
+        }
         steps {
-            if (isUnix()) {
-               sh 'mvn clean test'
-               sh 'mvn allure:report'
-             }
-             else {
-                bat 'mvn clean test'
-                bat 'mvn allure:report'
-             }
+           sh 'mvn clean test'
+           sh 'mvn allure:report'
         }
     }
+    stage('Test') {
+            when {
+                isUnix() false
+            }
+            steps {
+                bat 'mvn clean test'
+                bat 'mvn allure:report'
+            }
+        }
     stage('reports') {
         steps {
             script {
