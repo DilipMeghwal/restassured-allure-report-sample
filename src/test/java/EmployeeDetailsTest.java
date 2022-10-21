@@ -1,4 +1,5 @@
 import io.qameta.allure.*;
+import io.qameta.allure.junit4.DisplayName;
 import io.qameta.allure.restassured.AllureRestAssured;
 import io.restassured.http.ContentType;
 import org.json.JSONObject;
@@ -17,6 +18,7 @@ public class EmployeeDetailsTest {
     @Story("GET Request")
     @Severity(SeverityLevel.NORMAL)
     @Description("Test Description : Verify the details of employee of id-2")
+    @DisplayName("details of employee of id-2")
     public void verifyUser() {
 
         // Given
