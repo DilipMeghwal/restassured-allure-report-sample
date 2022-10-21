@@ -27,15 +27,6 @@ pipeline {
            sh 'mvn clean test'
            sh 'mvn allure:report'
         }
-        when {
-            expression {
-                isUnix()==false
-            }
-        }
-        steps {
-            bat 'mvn clean test'
-            bat 'mvn allure:report'
-        }
     }
     stage('Test on window') {
             when {
