@@ -39,8 +39,8 @@ pipeline {
                 bat 'mvn allure:report'
             }
     }
-    stage('reports') {
-        steps {
+    post {
+        always {
             script {
                 allure([
                         includeProperties: false,
